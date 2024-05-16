@@ -7,7 +7,7 @@ time: 2024-5-16
 
 ## Introduction
 
-Hello, here is the TCMNP package for Traditional Chinese Medicine Network Pharmacologyresearch.
+Hello, here is the TCMNP package for Traditional Chinese Medicine Network Pharmacology research.
 DATABASE:TCMNP
 https://tcmlab.top/tcmr/
 
