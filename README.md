@@ -3,7 +3,7 @@ title: "TCMNP-Traditional Chinese Medicine Network Pharmacology"
 author: Jinkun Liu, Min Ying
 time: 2024-5-16
 ---
-# TCMNP <img src= https://github.com/tcmlab/image/blob/main/LOGO2-15.png align="right" height="200" />
+# TCMNP <img src= https://github.com/tcmlab/image/blob/main/TCMP.png align="right" height="200" />
 
 ## Introduction
 
@@ -19,7 +19,7 @@ You can install the development version of TCMNP like so:
 
 ```{r}
 if(!require(devtools))install.packages("devtools")
-if(!require(TCMR))devtools::install_github("tcmlab/TCMNP",upgrade = FALSE,dependencies = TRUE)
+if(!require(TCMNP))devtools::install_github("tcmlab/TCMNP",upgrade = FALSE,dependencies = TRUE)
 ```
 
 ### 2. local
