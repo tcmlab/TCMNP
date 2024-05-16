@@ -7,6 +7,8 @@
 
 ## Introduction
 
+TCMR包名称变更为TCMNP包，以避免与现有的其他TCMR包的冲突，感谢大家的使用与反馈！
+
 Hello, here is the TCMNP package for Traditional Chinese Medicine Network Pharmacology research.
 DATABASE:TCMNP
 https://tcmlab.top/tcmr/
