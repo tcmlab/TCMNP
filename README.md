@@ -1,12 +1,9 @@
-# TCMNP
-Traditional Chinese Medicine Network Pharmacology
-
 ---
-title: "TCMNP"
+title: "TCMNP-Traditional Chinese Medicine Network Pharmacology"
 author: Jinkun Liu, Min Ying
 time: 2024-5-16
 ---
-# TCMR <img src= https://github.com/tcmlab/image/blob/main/LOGO2-15.png align="right" height="200" />
+# TCMNP <img src= https://github.com/tcmlab/image/blob/main/LOGO2-15.png align="right" height="200" />
 
 ## Introduction
 
