@@ -474,7 +474,7 @@ venn_net(data2, edge.type = "hive", label.degree = 4)
 ```
 <img src= https://github.com/tcmlab/image/blob/main/venn_net4-2.png height="400" />
 
-## 27. tf_filter
+## 27. venn_result
 
 ```{r}
 # Finding transcription factors and their target genes
