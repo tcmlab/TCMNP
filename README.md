@@ -479,7 +479,7 @@ venn_net(data2, edge.type = "hive", label.degree = 4)
 ## 27. venn_result
 
 ```{r}
-# Finding transcription factors and their target genes
+# Get intersection result
 data(venn_data, package = "TCMNP")
 head(venn_result(venn_data))
 ```
