@@ -9,7 +9,9 @@
 TCMR包名称变更为TCMNP包，以避免与现有的其他TCMR包的冲突，感谢大家的使用与反馈！
 
 Hello, here is the TCMNP package for Traditional Chinese Medicine Network Pharmacology research.
+
 DATABASE:TCMNP
+
 https://tcmlab.top/tcmr/
 
 ## Installation
@@ -32,7 +34,7 @@ devtools::install_local("TCMNP-main.zip", upgrade = F, dependencies = T)
 ```
 
 ## functions
-<img src= https://github.com/tcmlab/image/blob/main/TCMR-4-1-01.png height="600" />
+<img src= https://github.com/tcmlab/image/blob/main/tcmnp_str.png height="600" />
 
 ## 0. loaded R package 
 
