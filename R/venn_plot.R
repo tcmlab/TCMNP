@@ -103,7 +103,7 @@ venn_plot <- function(data,
       tmp2 <- unique(data2[, -1])
       tmp2 <- tmp2[rowSums(tmp2) != 0, ]
       # top column color
-      colors2 <- colorRampPalette(brewer.pal(8, bar.color))(nrow(tmp2))
+      colors2 <- colorRampPalette(RColorBrewer::brewer.pal(8, bar.color))(nrow(tmp2))
       query_list2 <- list()
       for (i in seq_len(nrow(tmp2))) {
         query_list2[[i]] <- list(
@@ -118,7 +118,7 @@ venn_plot <- function(data,
         venn.color <- set.color[seq_along(database)]
       } else if (length(database) > 5) {
         venn.color <- grDevices::colorRampPalette(
-          brewer.pal(length(set.color), set.color)(length(database))
+          RColorBrewer::brewer.pal(length(set.color), set.color)(length(database))
         )
       }
       UpSetR::upset(data2,
@@ -127,7 +127,7 @@ venn_plot <- function(data,
                     # number of datasets
                     mb.ratio = vratio,
                     # the ratio of the histogram to the size of the matrix
-                    #sets.bar.color = venn.color,
+                    sets.bar.color = venn.color,
                     # modify the color of the left bar
                     order.by = "freq",
                     # column sorting
@@ -140,5 +140,4 @@ venn_plot <- function(data,
     }
   }
 }
-
 
