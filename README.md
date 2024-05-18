@@ -170,7 +170,7 @@ tcm_pre_plot(tcm_prescription(disease_data)[[2]],color = 'Spectral')
 ## 5. tcm_net
 
 ```{r}
-data("xfbdf", package = "TCMR")
+data("xfbdf", package = "TCMNP")
 network.data <- xfbdf %>%
   dplyr::select(herb, molecule, target) %>%
   sample_n(100, replace = FALSE) %>%
@@ -218,7 +218,7 @@ alluvial.data <- xfbdf[sample(nrow(xfbdf), 30), ]
 ## 9. bar_plot
 
 ```{r}
-data(xfbdf, package = "TCMR")
+data(xfbdf, package = "TCMNP")
 eg <- bitr(unique(xfbdf$target), fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
 KK <- enrichKEGG(
   gene = eg$ENTREZID,
@@ -274,7 +274,7 @@ cir_plot(KK)
 
 ```{r}
 #Filter the pathways to display
-data(KK, package = "TCMR")
+data(KK, package = "TCMNP")
 newdata <- KK %>% dplyr::slice(11, 15, 17, 33, 53, .preserve = .preserve)
 pathway_cirplot(newdata)
 ```
@@ -307,7 +307,7 @@ dot_sankey(newdata, dot.x = 0.35, dot.y = 0.25)
 <img src= https://github.com/tcmlab/image/blob/main/dot_sankey.png height="400" />
 
 ```r
-data(kegg.filter, package = "TCMR")
+data(kegg.filter, package = "TCMNP")
 #Because not all pathways and genes are what we want to display, and displaying too many genes at the same time will cause text overlap.
 #The data format must be an S4 object or data frame.
 #"kegg.filter" was derived from the data frame after kegg-enriched data is screened for pathways and genes.
@@ -400,7 +400,7 @@ tcm_alluvial(data_sankey2, text.position = 1)
 ## 23. ppi_plot
 
 ```{r}
-data(string, package = "TCMR")
+data(string, package = "TCMNP")
 ppi_plot(string,
     label.degree = 1,
     nodes.color = "Spectral",
@@ -442,7 +442,7 @@ dock_plot(data, shape = "circle", legend.height = 3)
 ## 25. venn_plot
 
 ```{r}
-data(venn.data, package = "TCMR")
+data(venn.data, package = "TCMNP")
 venn_plot(venn.data, type = 1)
 ```
 
@@ -457,7 +457,7 @@ venn_plot(venn.data, type = 2)
 ## 26. venn_net
 
 ```{r}
-data(venn.data, package = "TCMR")
+data(venn.data, package = "TCMNP")
 gene <- names(sort(table(venn.data$gene), decreasing = TRUE))[1:50]
 data <- venn.data[venn.data$gene %in% gene, ]
 data2 <- sample_n(venn.data, 100) %>% rbind(data)
@@ -497,7 +497,7 @@ head(venn_result(venn_data))
 
 ```{r}
 # Finding transcription factors and their target genes
-data(xfbdf, package = "TCMR")
+data(xfbdf, package = "TCMNP")
 newdata <- tf_filter(xfbdf$target)
 head(newdata)
 ```
@@ -515,7 +515,7 @@ head(newdata)
 
 ```{r}
 # Visualization of filtered transcription factor data
-data(xfbdf, package = "TCMR")
+data(xfbdf, package = "TCMNP")
 tf_data <- tf_filter(xfbdf$target)
 set.seed(1234)
 data <- tf_data[, 1:2] %>%
@@ -528,7 +528,7 @@ tf_cirplot(data, color = "Spectral")
 ## 30. etcm
 
 ```{r}
-data("mahuang", package = "TCMR")
+data("mahuang", package = "TCMNP")
 data <- etcm(mahuang, herb = "ma huang")
 head(data)
 ```
