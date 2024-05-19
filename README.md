@@ -442,8 +442,8 @@ dock_plot(data, shape = "circle", legend.height = 3)
 ## 25. venn_plot
 
 ```{r}
-data(venn.data, package = "TCMNP")
-venn_plot(venn.data, type = 1)
+data(venn_data, package = "TCMNP")
+venn_plot(venn_data, type = 1)
 ```
 
 <img src= https://github.com/tcmlab/image/blob/main/venn_plot(venn%2C%20type%3D1).png height="400" />
@@ -459,8 +459,8 @@ venn_plot(venn.data, type = 2)
 ```{r}
 data(venn.data, package = "TCMNP")
 gene <- names(sort(table(venn.data$gene), decreasing = TRUE))[1:50]
-data <- venn.data[venn.data$gene %in% gene, ]
-data2 <- sample_n(venn.data, 100) %>% rbind(data)
+data <- venn.data[venn_data$gene %in% gene, ]
+data2 <- sample_n(venn_data, 100) %>% rbind(data)
 venn_net(data2, label.degree = 1)
 ```
 <img src= https://github.com/tcmlab/image/blob/main/venn_net.png height="400" />
