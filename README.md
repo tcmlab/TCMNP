@@ -1,6 +1,6 @@
 # TCMNP-Traditional Chinese Medicine Network Pharmacology
 
-### time: 2024-5-16
+### Time: 2024-5-16
 
 # <img src= https://github.com/tcmlab/image/blob/main/TCMNP.png align="right" height="200" />
 
