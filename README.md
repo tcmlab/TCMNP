@@ -457,7 +457,7 @@ venn_plot(venn.data, type = 2)
 ## 26. venn_net
 
 ```{r}
-data(venn.data, package = "TCMNP")
+data(venn_data, package = "TCMNP")
 gene <- names(sort(table(venn.data$gene), decreasing = TRUE))[1:50]
 data <- venn.data[venn_data$gene %in% gene, ]
 data2 <- sample_n(venn_data, 100) %>% rbind(data)
