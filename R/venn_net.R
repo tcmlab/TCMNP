@@ -52,7 +52,7 @@
 #' data(venn_data, package = "TCMNP")
 #' set.seed(1234)
 #' gene <- names(sort(table(venn_data$gene), decreasing = TRUE))[1:50]
-#' data <- venn_data[venn.data$gene %in% gene, ]
+#' data <- venn_data[venn_data$gene %in% gene, ]
 #' data2 <- dplyr::sample_n(venn_data, 100) %>%
 #'   rbind(data)
 #' venn_net(data2, label.degree = 1,graph.layout = "fr")
@@ -99,11 +99,11 @@ venn_net <- function(data,
   igraph::V(net)$size <- igraph::degree(net)
 
   if (edge.type == "arc") {
-    p <- ggraph(net, layout = graph.layout) +
+    p <- ggraph::ggraph(net, layout = graph.layout) +
       geom_edge_arc(
         aes(
           edge_width = edge.width,
-          colour = as.character(data$from),
+          colour = as.character(data$to),
           edge_alpha = edge.alpha
         ),
         show.legend = FALSE
@@ -111,7 +111,7 @@ venn_net <- function(data,
       geom_node_point(aes(color = degree, size = size), alpha = 1.0) +
       scale_color_gradientn(
         colours =
-          rev(RColorBrewer::brewer.pal(8, node.color))
+         rev(RColorBrewer::brewer.pal(8, node.color))
       ) +
       geom_node_text(
         aes(
@@ -124,14 +124,14 @@ venn_net <- function(data,
       ggraph::scale_edge_width(range = edge.width) +
       scale_size_continuous(name = "degree", range = node.size) +
       theme_graph(base_family = "sans") +
-      scale_edge_color_manual(values = edge.color)
+      ggraph::scale_edge_color_manual(values = edge.color)
     return(p)
   } else if (edge.type == "fan") {
-    p <- ggraph(net, layout = graph.layout) +
+    p <- ggraph::ggraph(net, layout = graph.layout) +
       geom_edge_fan(
         aes(
           edge_width = edge.width,
-          colour = as.character(data$from),
+          colour = as.character(data$to),
           edge_alpha = edge.alpha
         ),
         show.legend = FALSE
@@ -155,11 +155,11 @@ venn_net <- function(data,
       scale_edge_color_manual(edge.color)
     return(p)
   } else if (edge.type == "hive") {
-    p <- ggraph(net, layout = graph.layout) +
+    p <- ggraph::ggraph(net, layout = graph.layout) +
       geom_edge_hive(
         aes(
           edge_width = edge.width,
-          colour = as.character(data$from),
+          colour = as.character(data$to),
           edge_alpha = edge.alpha
         ),
         show.legend = FALSE
@@ -177,10 +177,11 @@ venn_net <- function(data,
         size = label.size,
         repel = label.repel
       ) +
+      scale_edge_color_manual(values = edge.color)+
       ggraph::scale_edge_width(range = edge.width) +
       scale_size_continuous(name = "degree", range = node.size) +
-      theme_graph(base_family = "sans") +
-      scale_edge_color_manual(values = edge.color)
+      theme_graph(base_family = "sans")
+
     return(p)
   }
 }
