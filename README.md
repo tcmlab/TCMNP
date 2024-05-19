@@ -449,7 +449,7 @@ venn_plot(venn_data, type = 1)
 <img src= https://github.com/tcmlab/image/blob/main/venn_plot(venn%2C%20type%3D1).png height="400" />
 
 ```{r}
-venn_plot(venn.data, type = 2)
+venn_plot(venn_data, type = 2)
 ```
 
 <img src= https://github.com/tcmlab/image/blob/main/venn_plot(venn%2C%20type%3D3).png height="400" />
@@ -458,8 +458,8 @@ venn_plot(venn.data, type = 2)
 
 ```{r}
 data(venn_data, package = "TCMNP")
-gene <- names(sort(table(venn.data$gene), decreasing = TRUE))[1:50]
-data <- venn.data[venn_data$gene %in% gene, ]
+gene <- names(sort(table(venn_data$gene), decreasing = TRUE))[1:50]
+data <- venn_data[venn_data$gene %in% gene, ]
 data2 <- sample_n(venn_data, 100) %>% rbind(data)
 venn_net(data2, label.degree = 1)
 ```
