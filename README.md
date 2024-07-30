@@ -77,7 +77,7 @@ herb = c("ma huang", "ku xing ren", "hua ju hong",
    flavor = herb_pm[match(herb, herb_pm$Herb_name_pinyin), ]$Flavor,
    meridian = herb_pm[match(herb, herb_pm$Herb_name_pinyin), ]$Meridian
  )
- tcm_comp_plus(xfbdf.compostion)
+ tcm_compound(xfbdf.compostion)
 ```
 <img src= https://github.com/tcmlab/image/blob/main/tcm_comp_plus2.png height="400" />
 
